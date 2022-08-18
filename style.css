@@ -7,15 +7,15 @@
     outline: 1px dotted palegreen;
 }
 
-.wrapper, .container, .keys, .specialKeys, .numpad, .numKeys, .operatorKeys{
+.wrapper, .calContainer, .keys, .specialKeys, .numpad, .numKeys, .operatorKeys{
     display: flex;
 }
 
-.wrapper, .container, .operatorKeys, .keys{
+.wrapper, .calContainer, .operatorKeys, .keys{
     flex-direction: column;
 }
 
-.container,  .keys, .keys > *, .numpad > * {
+.calContainer,  .keys, .keys > *, .numpad > * {
     gap: 1em;
 }
 
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.container{
+.calContainer{
     max-height: minmax(80vw, min-content);
     width: 80vw;
     padding: 1em;
