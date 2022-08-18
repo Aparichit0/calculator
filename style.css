@@ -1,5 +1,5 @@
 /* fix defaults*/
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: monospace;
@@ -7,56 +7,72 @@
     outline: 1px dotted palegreen;
 }
 
-.wrapper, .calContainer, .keys, .specialKeys, .numpad, .numKeys, .operatorKeys{
+.wrapper,
+.calContainer,
+.keys,
+.specialKeys,
+.numpad,
+.numKeys,
+.operatorKeys {
     display: flex;
 }
 
-.wrapper, .calContainer, .operatorKeys, .keys{
+.wrapper,
+.calContainer,
+.operatorKeys,
+.keys {
     flex-direction: column;
 }
 
-.calContainer,  .keys, .keys > *, .numpad > * {
+.calContainer,
+.keys,
+.keys>*,
+.numpad>* {
     gap: 1em;
 }
 
 
-.wrapper{
+.wrapper {
     height: 100vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
 }
 
-.calContainer{
+.calContainer {
     max-height: minmax(80vw, min-content);
     width: 80vw;
     padding: 1em;
 }
 
-.display{
+.display {
     text-align: right;
     padding: 1em;
     max-height: 25%;
 }
 
 
-.specialKeys{
+.specialKeys {
     justify-content: flex-end;
 }
 
- .numKeys{
+.numKeys {
     flex-wrap: wrap;
     width: 75%;
 }
- .numKeys > button {
-    flex-basis: 25%;  /* magic number to limit 3keys per row*/
-    flex-grow: 1; /* cover remaining area */
+
+.numKeys>button {
+    flex-basis: 25%;
+    /* magic number to limit 3keys per row*/
 }
 
-button{
-  padding: 0.5em;
+button {
+    padding: 0.5em;
+    flex-grow: 1;
+    /* cover remaining area */
+    border-radius: 20px;
 }
 
-.operatorKeys{
+.operatorKeys {
     flex-grow: 1;
 }
