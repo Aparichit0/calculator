@@ -1,10 +1,25 @@
-/* fix defaults*/
 * {
+    /* fix defaults*/
     margin: 0;
     padding: 0;
     font-family: monospace;
     box-sizing: border-box;
-    outline: 1px dotted palegreen;
+    /* outline: 1px dotted; */
+    /* color palette */
+    --bgColor: #DFEAFC;
+    --lightDisplayColor: #CEE5E5;
+    --darkDisplayColor: #5B7375;
+    --btnFgColor: #E5F5FD;
+    --btnBgColor: #374259;
+    --btnSpecialColor: #8A4669;
+    --btnOperatorColor: #485975;
+    --bodyColor1: #637583;
+    --bodyColor2: #374351;
+    --bodyColor3: #282F3A;
+}
+
+body {
+    background-color: var(--bgColor);
 }
 
 .wrapper,
@@ -31,7 +46,6 @@
     gap: 1em;
 }
 
-
 .wrapper {
     height: 100vh;
     width: 100vw;
@@ -42,7 +56,16 @@
 .calContainer {
     max-height: minmax(80vw, min-content);
     width: 80vw;
-    padding: 1em;
+    min-width: 30ch;
+    max-width: 55ch;
+    padding: 1.5em;
+    gap: 3em;
+    border-top: solid #212A3B;
+    border-right: solid #3C4759;
+    border-left: solid #6F818F;
+    border-bottom: solid #4C5D6F;
+    background-image: linear-gradient(45deg, var(--bodyColor1), var(--bodyColor2) 35%, var(--bodyColor3) 90%);
+    border-radius: 5px;
 }
 
 .display {
@@ -54,6 +77,7 @@
 
 .specialKeys {
     justify-content: flex-end;
+
 }
 
 .numKeys {
@@ -62,17 +86,31 @@
 }
 
 .numKeys>button {
-    flex-basis: 25%;
     /* magic number to limit 3keys per row*/
+    flex-basis: 25%;
+}
+
+.operatorKeys {
+    flex-grow: 1;
 }
 
 button {
     padding: 0.5em;
     flex-grow: 1;
-    /* cover remaining area */
-    border-radius: 20px;
+    border-radius: 10px;
+    font-size: large;
+    color: var(--btnFgColor);
+    background-color: var(--btnBgColor);
 }
 
-.operatorKeys {
-    flex-grow: 1;
+.operatorKeys > button, #equals{
+    background-color: var(--btnOperatorColor);
+}
+
+#clear{
+    background-color: var(--btnSpecialColor);
+}
+
+.display{
+background-image: linear-gradient(45deg, var(--lightDisplayColor), var(--darkDisplayColor) 90%);
 }
