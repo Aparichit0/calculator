@@ -13,6 +13,13 @@
     --btnBgColor: #374259;
     --btnSpecialColor: #8A4669;
     --btnOperatorColor: #485975;
+    /* gradiant color palette */
+    --btnBgColor1: #404d68;
+    --btnBgColor2: #2d3549;
+    --btnSpecialColor1: #8b466a;
+    --btnSpecialColor2: #693550;
+    --btnOperatorColor1: #516585;
+    --btnOperatorColor2: #3e4d65;
     --bodyColor1: #637583;
     --bodyColor2: #374351;
     --bodyColor3: #282F3A;
@@ -105,15 +112,18 @@ button {
     font-size: large;
     color: var(--btnFgColor);
     background-color: var(--btnBgColor);
+    background-image: linear-gradient(30deg, var(--btnBgColor1) 15%, var(--btnBgColor2) 90%);
     box-shadow: -1px 1px 0.125em black;
 }
 
 .operatorKeys > button, #equals{
     background-color: var(--btnOperatorColor);
+    background-image: linear-gradient(30deg, var(--btnOperatorColor1) 15%, var(--btnOperatorColor2) 90%);
 }
 
 #clear{
     background-color: var(--btnSpecialColor);
+    background-image: linear-gradient(30deg, var(--btnSpecialColor1) 15%, var(--btnSpecialColor2) 90%);
 }
 
 .display{
