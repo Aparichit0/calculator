@@ -60,15 +60,16 @@ body {
     max-width: 55ch;
     padding: 1.5em;
     gap: 3em;
-    border-top: solid #212A3B;
-    border-right: solid #3C4759;
-    border-left: solid #6F818F;
-    border-bottom: solid #4C5D6F;
+    border-top: solid #212A3B 4px;
+    border-right: solid #3C4759 4px;
+    border-left: solid #6F818F 4px;
+    border-bottom: solid #4C5D6F 4px;
     background-image: linear-gradient(45deg, var(--bodyColor1), var(--bodyColor2) 35%, var(--bodyColor3) 90%);
     border-radius: 5px;
 }
 
 .display {
+    border: inset var(--bodyColor2);
     text-align: right;
     padding: 1em;
     max-height: 25%;
