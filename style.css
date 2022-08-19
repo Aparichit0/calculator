@@ -4,7 +4,6 @@
     padding: 0;
     font-family: monospace;
     box-sizing: border-box;
-    /* outline: 1px dotted; */
     /* color palette */
     --bgColor: #DFEAFC;
     --lightDisplayColor: #CEE5E5;
@@ -85,10 +84,14 @@ body {
     font-weight: 500;
 }
 
+.specialKeys #delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.specialKeys {
-    justify-content: flex-end;
-
+#delete > img{
+    width: 1.625em;
 }
 
 .numKeys {
