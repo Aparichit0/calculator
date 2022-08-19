@@ -66,6 +66,7 @@ body {
     border-bottom: solid #4C5D6F 4px;
     background-image: linear-gradient(45deg, var(--bodyColor1), var(--bodyColor2) 35%, var(--bodyColor3) 90%);
     border-radius: 5px;
+    box-shadow: -3px 4px 1em black;
 }
 
 .display {
@@ -102,6 +103,7 @@ button {
     font-size: large;
     color: var(--btnFgColor);
     background-color: var(--btnBgColor);
+    box-shadow: -1px 1px 0.125em black;
 }
 
 .operatorKeys > button, #equals{
