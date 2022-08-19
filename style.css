@@ -72,8 +72,10 @@ body {
 .display {
     border: inset var(--bodyColor2);
     text-align: right;
-    padding: 1em;
+    padding: 0.25em;
     max-height: 25%;
+    font-size: 2em;
+    font-weight: 500;
 }
 
 
