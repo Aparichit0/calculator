@@ -1,16 +1,9 @@
-// basic maths functions
-function add(a, b) {
-  return a + b;
-}
+let currentVal = 0; //initial value
 
-function substract(a, b) {
-  return a - b;
-}
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function divide(a, b) {
-  return a / b;
+// handle basic mathematical operations
+const operate = {
+  add: nextVal => currentVal += nextVal,
+  substract: nextVal => currentVal -= nextVal,
+  multiply: nextVal => currentVal *= nextVal,
+  divide: nextVal => currentVal /= nextVal,
 }

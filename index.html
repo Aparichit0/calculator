@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
   <link rel="stylesheet" href="./style.css" type="text/css" />
-  <script src="script.js">
+  <script src="script.js" defer>
   </script>
 </head>
 
 <body>
   <div class="wrapper">
-    <div class="container">
+    <div class="calContainer">
       <div class="display">123456.789</div>
       <div class="keys">
         <div class="specialKeys">
-          <button type="reset" value="clear">AC</button>
-          <button type="button" value="backspace">X</button>
+          <button type="reset" id="clear">AC</button>
+          <button type="button" id="delete"><img src="./icons/delete-svgrepo-com.svg" alt="X"></button>
         </div>
         <div class="numpad">
           <div class="numKeys">
@@ -35,14 +35,22 @@
             <button type="submit" id="equals">=</button>
           </div>
           <div class="operatorKeys">
-            <button type="submit" id="add">+</button>
-            <button type="submit" id="substract">-</button>
-            <button type="submit" id="multiply">*</button>
             <button type="submit" id="divide">/</button>
+            <button type="submit" id="multiply">*</button>
+            <button type="submit" id="substract">-</button>
+            <button type="submit" id="add">+</button>
           </div>
         </div>
       </div>
     </div>
+    <nav>
+      <a href="https://aparichit0.github.io" id="home">
+        <img src="./icons/home-svgrepo-com.svg" alt="Home" title="home">
+    </a>
+    <a href="https://github.com/Aparichit0/calculator" target="_blank" id="git">
+      <img src="./icons/github-svgrepo-com.svg" alt="github" title="Github">
+    </a>
+  </nav>
   </div>
 
 </body>
