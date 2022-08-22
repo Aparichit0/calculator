@@ -9,14 +9,29 @@ const operate = {
 };
 
 // key mapping with DOM
-const numpad = document.querySelectorAll(".numpad> *> button");
-numpad.forEach(e => e.addEventListener("click", keyHandle));
+const numPad = document.querySelectorAll(".numPad> *> button");
+numPad.forEach(e => e.addEventListener("click", keyHandle));
 
 function keyHandle(key) {
+  if (key.target.id == "equals") return; //skip temporarily 
+
+  let keyValue = key.target.value;
+  updateDisplay(keyValue);
+
   if (key.target.type == "button") {
-    console.log(key.target.value);
+    console.log(keyValue);
   }
   if (key.target.type == "submit") {
-    console.log(key.target.id);
+    console.log(keyValue);
   }
+}
+
+// displayText
+const display = document.querySelector("#display");
+function updateDisplay(text){
+  if (display.innerText == "0"){
+    display.innerText = text;
+    return;
+  }
+  display.innerText += text;
 }

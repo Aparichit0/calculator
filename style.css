@@ -29,7 +29,7 @@ body {
 }
 
 .wrapper,
-.calContainer,
+#calContainer,
 .keys,
 .specialKeys,
 .numPad,
@@ -40,14 +40,14 @@ nav {
 }
 
 .wrapper,
-.calContainer,
+#calContainer,
 .operatorKeys,
 .keys {
     flex-direction: column;
 }
 
 nav,
-.calContainer,
+#calContainer,
 .keys,
 .keys>*,
 .numPad>* {
@@ -61,7 +61,7 @@ nav,
     justify-content: center;
 }
 
-.calContainer {
+#calContainer {
     max-height: minmax(80vw, min-content);
     width: 80vw;
     min-width: 30ch;
@@ -77,13 +77,14 @@ nav,
     box-shadow: -3px 4px 1em black;
 }
 
-.display {
+#display {
     border: inset var(--bodyColor2);
     text-align: right;
     padding: 0.25em;
     max-height: 25%;
     font-size: 2em;
     font-weight: 500;
+    overflow: hidden;
 }
 
 .specialKeys #delete {
@@ -132,7 +133,7 @@ button {
     background-image: linear-gradient(30deg, var(--btnSpecialColor1) 15%, var(--btnSpecialColor2) 90%);
 }
 
-.display {
+#display {
     background-image: linear-gradient(45deg, var(--lightDisplayColor), var(--darkDisplayColor) 90%);
 }
 
