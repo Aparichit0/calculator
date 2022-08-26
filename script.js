@@ -1,6 +1,7 @@
 let currentVal = 0; //initial value
 let numString = "";
 let numArray = [];
+let operatorArray = [];
 // handle basic mathematical operations
 const operate = {
   add: (nextVal) => (currentVal += nextVal),
@@ -22,6 +23,8 @@ function keyHandle(key) {
   if (key.target.type == "button") numString += keyValue;
   if (key.target.type == "submit") {
     addNextNum();
+    operatorArray.push(key.target.id); //save operator for next operation
+    calcResult();
   }
 }
 
@@ -39,4 +42,11 @@ function addNextNum() {
   const nextNum = Number.parseInt(numString);
   numString = ""; //reset
   numArray.push(nextNum);
+}
+
+function calcResult() {
+  firstNum = numArray.shift();
+  if (currentVal == 0) return (currentVal = firstNum);
+  prevOperator = operatorArray.shift(); //previously saved operator in queue
+  return operate[prevOperator](firstNum);
 }
