@@ -1,28 +1,28 @@
-let currentVal = 0; //initial value
+let total = 0; //initial value
 let numString = "";
-let numArray = [];
-let operatorArray = [];
+const numArray = [];
+const operatorArray = [];
 // handle basic mathematical operations
 const operate = {
-  add: (nextVal) => (currentVal += nextVal),
-  subtract: (nextVal) => (currentVal -= nextVal),
-  multiply: (nextVal) => (currentVal *= nextVal),
-  divide: (nextVal) => (currentVal /= nextVal),
+  add: (nextVal) => (total += nextVal),
+  subtract: (nextVal) => (total -= nextVal),
+  multiply: (nextVal) => (total *= nextVal),
+  divide: (nextVal) => (total /= nextVal),
 };
 
 // key mapping with DOM
 const numPad = document.querySelectorAll(".numPad> *> button");
-numPad.forEach(e => e.addEventListener("click", keyHandle));
+numPad.forEach((e) => e.addEventListener("click", keyHandle));
 
 function keyHandle(key) {
   if (key.target.id == "equals") return; //skip temporarily 
 
-  let keyValue = key.target.value;
+  const keyValue = key.target.value;
   updateDisplay(keyValue);
 
   if (key.target.type == "button") numString += keyValue;
   if (key.target.type == "submit") {
-    addNextNum();
+    addNewNum();
     operatorArray.push(key.target.id); //save operator for next operation
     calcResult();
   }
@@ -38,15 +38,15 @@ function updateDisplay(text){
   display.innerText += text;
 }
 
-function addNextNum() {
-  const nextNum = Number.parseInt(numString);
+function addNewNum() {
+  const newNum = Number.parseInt(numString);
   numString = ""; //reset
-  numArray.push(nextNum);
+  numArray.push(newNum);
 }
 
 function calcResult() {
-  firstNum = numArray.shift();
-  if (currentVal == 0) return (currentVal = firstNum);
+  const nextNum = numArray.shift();
+  if (total == 0) return (total = nextNum);
   prevOperator = operatorArray.shift(); //previously saved operator in queue
-  return operate[prevOperator](firstNum);
+  return operate[prevOperator](nextNum);
 }
