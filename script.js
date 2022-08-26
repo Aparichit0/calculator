@@ -8,6 +8,7 @@ const operate = {
   subtract: (nextVal) => (total -= nextVal),
   multiply: (nextVal) => (total *= nextVal),
   divide: (nextVal) => (total /= nextVal),
+  equals: () => total,
 };
 
 // key mapping with DOM
@@ -15,8 +16,6 @@ const numPad = document.querySelectorAll(".numPad> *> button");
 numPad.forEach((e) => e.addEventListener("click", keyHandle));
 
 function keyHandle(key) {
-  if (key.target.id == "equals") return; //skip temporarily 
-
   const keyValue = key.target.value;
   updateDisplay(keyValue);
 
