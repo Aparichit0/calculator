@@ -12,7 +12,7 @@
     --btnBgColor: #374259;
     --btnSpecialColor: #8A4669;
     --btnOperatorColor: #485975;
-    /* gradiant color palette */
+    /* gradient color palette */
     --btnBgColor1: #404d68;
     --btnBgColor2: #2d3549;
     --btnSpecialColor1: #8b466a;
@@ -28,6 +28,7 @@ body {
     background-color: var(--bgColor);
 }
 
+/* flex boxes */
 .wrapper,
 #calContainer,
 .keys,
@@ -54,6 +55,7 @@ nav,
     gap: 1em;
 }
 
+/* individual elements */
 .wrapper {
     height: 100vh;
     width: 100vw;
@@ -77,6 +79,7 @@ nav,
     box-shadow: -3px 4px 1em black;
 }
 
+/* display */
 #display {
     border: inset var(--bodyColor2);
     text-align: right;
@@ -87,6 +90,7 @@ nav,
     overflow: hidden;
 }
 
+/* buttons */
 .specialKeys #delete {
     display: flex;
     justify-content: center;
@@ -154,6 +158,7 @@ nav img {
     padding: 0 0.25em;
 }
 
+/* display orientation specific rules*/
 @media (orientation: portrait) {
     nav {
         border-bottom: none;
