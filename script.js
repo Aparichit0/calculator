@@ -19,22 +19,29 @@ function keyHandle(key) {
   const keyValue = key.target.value;
   updateDisplay(keyValue);
 
-  if (key.target.type == "button") numString += keyValue;
+  if (key.target.type == "button") {
+    numString += keyValue;
+    updateDisplay(`${numString}`);
+  };
   if (key.target.type == "submit") {
     addNewNum();
     operatorArray.push(key.target.id); //save operator for next operation
     calcResult();
+    updateDisplay(null, `${total}${key.target.value}`);
   }
 }
 
 // displayText
-const display = document.querySelector("#display");
-function updateDisplay(text){
-  if (display.innerText == "0"){
-    display.innerText = text;
-    return;
+const subDisplay = document.querySelector("#display>.sub");
+const mainDisplay = document.querySelector("#display>.main");
+function updateDisplay(mainText, subText) {
+  if (mainText != null){
+    mainDisplay.innerText = mainText;
   }
-  display.innerText += text;
+  if (subText != null){
+    subDisplay.innerText = subText;
+    mainDisplay.innerText = mainText;
+  }
 }
 
 function addNewNum() {
