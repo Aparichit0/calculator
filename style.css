@@ -86,8 +86,20 @@ nav,
     padding: 0.25em;
     max-height: 25%;
     font-size: 2em;
+    height: 3em;
     font-weight: 500;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#display>.sub {
+    font-size: 1em;
+    max-height: 1em;
+}
+
+#display>.main {
+    padding-bottom: 0;
+    font-size: 1.25em;
 }
 
 /* buttons */
