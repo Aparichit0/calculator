@@ -48,14 +48,13 @@ nav {
 }
 
 nav,
-#calContainer,
 .keys,
 .keys>*,
 .numPad>* {
     gap: 1em;
 }
 
-/* individual elements */
+/* containers */
 .wrapper {
     height: 100vh;
     width: 100vw;
@@ -64,7 +63,6 @@ nav,
 }
 
 #calContainer {
-    max-height: minmax(80vw, min-content);
     width: 80vw;
     min-width: 30ch;
     max-width: 55ch;
@@ -81,10 +79,10 @@ nav,
 
 /* display */
 #display {
+    background-image: linear-gradient(45deg, var(--lightDisplayColor), var(--darkDisplayColor) 90%);
     border: inset var(--bodyColor2);
     text-align: right;
     padding: 0.25em;
-    max-height: 25%;
     font-size: 2em;
     height: 3em;
     font-weight: 500;
@@ -149,19 +147,14 @@ button {
     background-image: linear-gradient(30deg, var(--btnSpecialColor1) 15%, var(--btnSpecialColor2) 90%);
 }
 
-#display {
-    background-image: linear-gradient(45deg, var(--lightDisplayColor), var(--darkDisplayColor) 90%);
-}
-
 /* navigation */
-
 nav {
     position: fixed;
     bottom: 0;
     padding: 1em;
     border-radius: 10px 10px 0 0;
     background-color: whitesmoke;
-    border: 2px gray solid;
+    box-shadow: 0 0 1em gray;
 }
 
 nav img {
@@ -171,18 +164,11 @@ nav img {
 }
 
 /* display orientation specific rules*/
-@media (orientation: portrait) {
-    nav {
-        border-bottom: none;
-    }
-}
-
 @media (orientation: landscape) {
     nav {
         right: 0;
         bottom: 50%;
         border-radius: 10px 0 0 10px;
-        border-right: none;
         flex-direction: column;
     }
 
