@@ -17,12 +17,12 @@ numPad.forEach((e) => e.addEventListener("click", keyHandle));
 
 function keyHandle(key) {
   const keyValue = key.target.value;
-  updateDisplay(keyValue);
 
   if (key.target.type == "button") {
     numString += keyValue;
     updateDisplay(`${numString}`);
-  };
+    return;
+  }
   if (key.target.type == "submit") {
     const operator = key.target.id;
     addNewNum();
@@ -34,17 +34,19 @@ function keyHandle(key) {
       return;
     }
     updateDisplay(null, `${total}${key.target.value}`);
+    return;
   }
+  return;
 }
 
 // displayText
 const subDisplay = document.querySelector("#display>.sub");
 const mainDisplay = document.querySelector("#display>.main");
 function updateDisplay(mainText, subText) {
-  if (mainText != null){
+  if (mainText != null) {
     mainDisplay.innerText = mainText;
   }
-  if (subText != null){
+  if (subText != null) {
     subDisplay.innerText = subText;
     mainDisplay.innerText = mainText;
   }
