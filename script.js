@@ -27,6 +27,10 @@ function keyHandle(key) {
     addNewNum();
     operatorArray.push(key.target.id); //save operator for next operation
     calcResult();
+    if(key.target.id == "equals"){
+      //display result on main display on clicking equals
+      return updateDisplay(`${total}${key.target.value}`, "");
+    }
     updateDisplay(null, `${total}${key.target.value}`);
   }
 }
