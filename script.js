@@ -24,12 +24,14 @@ function keyHandle(key) {
     updateDisplay(`${numString}`);
   };
   if (key.target.type == "submit") {
+    const operator = key.target.id;
     addNewNum();
-    operatorArray.push(key.target.id); //save operator for next operation
+    operatorArray.push(operator); //save operator for next operation
     calcResult();
-    if(key.target.id == "equals"){
-      //display result on main display on clicking equals
-      return updateDisplay(`${total}${key.target.value}`, "");
+    if (operator == "equals") {
+      //results on main display
+      updateDisplay(`${total}${key.target.value}`, "");
+      return;
     }
     updateDisplay(null, `${total}${key.target.value}`);
   }
