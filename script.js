@@ -25,6 +25,12 @@ function keyHandle(key) {
   }
   if (key.target.type == "submit") {
     const operator = key.target.id;
+    if (total === "0" && operator == "subtract") {
+      //accept negative value for first number
+      numString += "-";
+      updateDisplay(`${numString}`);
+      return;
+    }
     addNewNum();
     operatorArray.push(operator); //save operator for next operation
     calcResult();
