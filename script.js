@@ -62,5 +62,6 @@ function calcResult() {
   const nextNum = numArray.shift();
   if (total === "0") return (total = nextNum); //treat first number as total
   prevOperator = operatorArray.shift(); //previously saved operator in queue
+  if (!nextNum) return; //if newNum doesn't exist, change prevOperator
   return operate[prevOperator](nextNum);
 }
