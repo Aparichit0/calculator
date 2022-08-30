@@ -1,4 +1,4 @@
-let total = 0; //initial value
+let total = "0"; //string is used to avoid later conflicts
 let numString = "";
 const numArray = [];
 const operatorArray = [];
@@ -60,7 +60,7 @@ function addNewNum() {
 
 function calcResult() {
   const nextNum = numArray.shift();
-  if (total == 0) return (total = nextNum);
+  if (total === "0") return (total = nextNum); //treat first number as total
   prevOperator = operatorArray.shift(); //previously saved operator in queue
   return operate[prevOperator](nextNum);
 }
