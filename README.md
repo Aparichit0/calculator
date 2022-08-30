@@ -6,10 +6,12 @@ work in progress:
 1. display
 
 known bugs:
-1. pressing "-" without entering any number result in "total = NaN"
-2. clicking on delete button img gives unexpected results
+1. clicking on delete button img gives unexpected results
+	(planned with ending touches)
 
-need to be worked on:
+schedule queue:
 1. decimal key,
 2. delete key,
 3. all clear key
+4. new key (+/-)
+5. refactor accept first value negative bugfix along with (+/-)
