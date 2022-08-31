@@ -74,3 +74,12 @@ function calcResult() {
   if (!nextNum) return; //if newNum doesn't exist, change prevOperator
   return operate[prevOperator](nextNum);
 }
+
+// return decimal information
+function decimalIntensity(num) {
+  if (!isDecimal(num)) return; //exit if not decimal
+  const decimalIndex = `${num}`.indexOf(".");
+  const decimalLength = `${num}`.length - 1; //length counts from 1
+  const fractionIntensity = decimalLength - decimalIndex; //count of digits after "."
+  return fractionIntensity;
+}
