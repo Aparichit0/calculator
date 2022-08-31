@@ -2,6 +2,9 @@ let total = "0"; //string is used to avoid later conflicts
 let numString = "";
 const numArray = [];
 const operatorArray = [];
+
+const isDecimal = (num) => !Number.isInteger(num); //Integer is not decimal
+
 // handle basic mathematical operations
 const operate = {
   add: (nextVal) => (total += nextVal),
