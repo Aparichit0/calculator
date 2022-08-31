@@ -59,7 +59,7 @@ function updateDisplay(mainText, subText) {
 }
 
 function addNewNum() {
-  const newNum = Number.parseInt(numString);
+  const newNum = Number.parseFloat(numString);
   numString = ""; //reset
   numArray.push(newNum);
 }
