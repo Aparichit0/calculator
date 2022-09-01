@@ -7,10 +7,27 @@ const isDecimal = (num) => !Number.isInteger(num); //Integer is not decimal
 
 // handle basic mathematical operations
 const operate = {
-  add: (nextVal) => (total += nextVal),
-  subtract: (nextVal) => (total -= nextVal),
-  multiply: (nextVal) => (total *= nextVal),
-  divide: (nextVal) => (total /= nextVal),
+  add: (nextVal) => {
+    adjust = decimalAdjust(total, nextVal);
+    total = adjust.first + adjust.second;
+    return (total /= adjust.pow);
+  },
+  subtract: (nextVal) => {
+    adjust = decimalAdjust(total, nextVal);
+    total = adjust.first - adjust.second;
+    return (total /= adjust.pow);
+  },
+  multiply: (nextVal) => {
+    adjust = decimalAdjust(total, nextVal);
+    total = adjust.first * adjust.second;
+    return (total /= adjust.pow ** 2); //fraction magnitudes also multiplied
+  },
+  divide: (nextVal) => {
+    adjust = decimalAdjust(total, nextVal);
+    console.log(adjust.first / adjust.second, adjust);
+    total = adjust.first / adjust.second;
+    return total; //fraction magnitudes are canceled
+  },
   equals: () => total,
 };
 
