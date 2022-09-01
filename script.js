@@ -20,6 +20,7 @@ numPad.forEach((e) => e.addEventListener("click", keyHandle));
 
 function keyHandle(key) {
   const keyValue = key.target.value;
+  if (numString.includes(".") && keyValue == ".") return; //ignore multiple decimal clicks
 
   if (key.target.type == "button") {
     numString += keyValue;
