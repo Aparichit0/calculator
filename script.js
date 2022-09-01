@@ -91,7 +91,7 @@ function calcResult() {
 
 // return decimal information
 function decimalIntensity(num) {
-  if (!isDecimal(num)) return; //exit if not decimal
+  if (!isDecimal(num)) return 0; //every integer have 0 digits of meaningful value after decimal
   const decimalIndex = `${num}`.indexOf(".");
   const decimalLength = `${num}`.length - 1; //length counts from 1
   const fractionIntensity = decimalLength - decimalIndex; //count of digits after "."
