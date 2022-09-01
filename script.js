@@ -24,7 +24,6 @@ const operate = {
   },
   divide: (nextVal) => {
     adjust = decimalAdjust(total, nextVal);
-    console.log(adjust.first / adjust.second, adjust);
     total = adjust.first / adjust.second;
     return total; //fraction magnitudes are canceled
   },
@@ -59,7 +58,7 @@ function keyHandle(key) {
   }
   if (key.target.type == "submit") {
     const operator = key.target.id;
-    if (total === "0" && operator == "subtract") {
+    if (total == "0" && numString == "" && operator == "subtract") {
       //accept negative value for first number
       numString += "-";
       updateDisplay(`${numString}`);
