@@ -14,6 +14,19 @@ const operate = {
   equals: () => total,
 };
 
+function decimalAdjust(firstNum, secondNum) {
+  //adjust decimals to integers of same level
+  let fractionOf = 10 ** decimalIntensity(firstNum);
+  if (decimalIntensity(firstNum) < decimalIntensity(secondNum)) {
+    fractionOf = 10 ** decimalIntensity(secondNum);
+  }
+  return {
+    first: Math.floor((firstNum *= fractionOf)),
+    second: Math.floor((secondNum *= fractionOf)),
+    pow: fractionOf,
+  };
+}
+
 // key mapping with DOM
 const numPad = document.querySelectorAll(".numPad> *> button");
 numPad.forEach((e) => e.addEventListener("click", keyHandle));
