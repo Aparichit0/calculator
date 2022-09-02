@@ -69,7 +69,7 @@ function keyHandle(key) {
     calcResult();
     if (operator == "equals") {
       //results on main display
-      updateDisplay(`${total}${key.target.value}`, "");
+      updateDisplay(`${total}`, "");
       return;
     }
     updateDisplay(null, `${total}${key.target.value}`);
