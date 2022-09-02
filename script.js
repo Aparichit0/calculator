@@ -78,6 +78,32 @@ function keyHandle(key) {
   return;
 }
 
+//delete key
+const deleteKey = document.querySelector("#delete");
+deleteKey.addEventListener("click", () => {
+  if (!(mainDisplay.innerText == null || mainDisplay.innerText == "")) {
+    //runs when main display has content
+    if (numString == "") numString = `${total}`;
+    numString = numString.substring(0, numString.length - 1); //delete last character
+    if (subDisplay.innerText == "") {
+      //runs when subDisplay is empty, but main has content
+      total = Number.parseFloat(numString);
+      numString = ""; //reset
+      updateDisplay(`${total}`);
+      return;
+    }
+    updateDisplay(`${numString}`);
+    return;
+  }
+  if (subDisplay.innerText != "" && mainDisplay.innerText == "") {
+    //runs when only subDisplay has content
+    operatorArray.pop(); //remove operator
+    operatorArray.push("equals"); //add dummy operator that does nothing
+    updateDisplay(`${total}`, "");
+    return;
+  }
+});
+
 // displayText
 const subDisplay = document.querySelector("#display>.sub");
 const mainDisplay = document.querySelector("#display>.main");
