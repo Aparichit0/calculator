@@ -105,9 +105,10 @@ deleteKey.addEventListener("click", () => {
 const subDisplay = document.querySelector("#display>.sub");
 const mainDisplay = document.querySelector("#display>.main");
 function updateDisplay(mainText, subText) {
-  if (isNaN(total) || !isFinite(total)) {
+  if (isNaN(total)) {
     subDisplay.innerText = "Syntax";
     mainDisplay.innerText = "Error";
+    return;
   }
   if (mainText != null) {
     mainDisplay.innerText = mainText;
@@ -122,13 +123,14 @@ function addNewNum() {
   const newNum = Number.parseFloat(numString);
   numString = ""; //reset
   numArray.push(newNum);
+  return;
 }
 
 function calcResult() {
   const nextNum = numArray.shift();
   if (total === "0") return (total = nextNum); //treat first number as total
   prevOperator = operatorArray.shift(); //previously saved operator in queue
-  if (nextNum === 0 || nextNum || !isNaN(nextNum)) {
+  if (nextNum === 0 || nextNum) {
     //if nextNum is either 0 or not empty
     return operate[prevOperator](nextNum);
   }
