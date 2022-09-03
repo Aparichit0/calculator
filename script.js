@@ -27,7 +27,10 @@ const operate = {
     total = adjust.first / adjust.second;
     return total; //fraction magnitudes are canceled
   },
-  equals: () => total,
+  equals: (newTotal) => {
+    if (!newTotal) return total; //if arguments are empty finish last operation & exit
+    return (total = Number.parseFloat(newTotal));
+  },
 };
 
 //decimal operations
