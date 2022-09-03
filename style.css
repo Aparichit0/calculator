@@ -101,14 +101,16 @@ nav,
 }
 
 /* buttons */
-.specialKeys #delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.specialKeys>button {
+    /* all special buttons are equal sized */
+    flex-basis: 100%;
 }
 
-#delete>img {
-    width: 1.625em;
+#delete {
+    background-image: url(./img/delete-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.625em;
 }
 
 .numKeys {
