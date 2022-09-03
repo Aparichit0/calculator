@@ -131,8 +131,11 @@ function calcResult() {
   const nextNum = numArray.shift();
   if (total === "0") return (total = nextNum); //treat first number as total
   prevOperator = operatorArray.shift(); //previously saved operator in queue
-  if (!nextNum) return; //if newNum doesn't exist, change prevOperator
-  return operate[prevOperator](nextNum);
+  if (nextNum === 0 || nextNum || !isNaN(nextNum)) {
+    //if nextNum is either 0 or not empty
+    return operate[prevOperator](nextNum);
+  }
+  return; //else change operator & exit
 }
 
 // return decimal information
