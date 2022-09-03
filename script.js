@@ -108,6 +108,10 @@ deleteKey.addEventListener("click", () => {
 const subDisplay = document.querySelector("#display>.sub");
 const mainDisplay = document.querySelector("#display>.main");
 function updateDisplay(mainText, subText) {
+  if (isNaN(total) || !isFinite(total)) {
+    subDisplay.innerText = "Syntax";
+    mainDisplay.innerText = "Error";
+  }
   if (mainText != null) {
     mainDisplay.innerText = mainText;
   }
