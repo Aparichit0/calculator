@@ -37,8 +37,8 @@ function decimalAdjust(firstNum, secondNum) {
     fractionOf = 10 ** decimalIntensity(secondNum);
   }
   return {
-    first: Math.floor((firstNum *= fractionOf)),
-    second: Math.floor((secondNum *= fractionOf)),
+    first: Math.round((firstNum *= fractionOf)),
+    second: Math.round((secondNum *= fractionOf)),
     pow: fractionOf,
   };
 }
