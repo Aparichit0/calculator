@@ -139,3 +139,9 @@ function decimalIntensity(num) {
   const fractionIntensity = decimalLength - decimalIndex; //count of digits after "."
   return fractionIntensity;
 }
+
+//clear/reset key
+const clear = document.querySelector(".specialKeys>#clear");
+clear.addEventListener("click", () => {
+  document.location.reload();
+});
