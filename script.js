@@ -30,6 +30,7 @@ const operate = {
   equals: () => total,
 };
 
+//decimal operations
 function decimalAdjust(firstNum, secondNum) {
   //adjust decimals to integers of same level
   let fractionOf = 10 ** decimalIntensity(firstNum);
@@ -43,19 +44,32 @@ function decimalAdjust(firstNum, secondNum) {
   };
 }
 
-// key mapping with DOM
+// return decimal information
+function decimalIntensity(num) {
+  if (!isDecimal(num)) return 0; //every integer have 0 digits of meaningful value after decimal
+  const decimalIndex = `${num}`.indexOf(".");
+  const decimalLength = `${num}`.length - 1; //length counts from 1
+  const fractionIntensity = decimalLength - decimalIndex; //count of digits after "."
+  return fractionIntensity;
+}
+
+// numPad key mapping with DOM
 const numPad = document.querySelectorAll(".numPad> *> button");
 numPad.forEach((e) => e.addEventListener("click", keyHandle));
 
+//numPad keys handling logic
 function keyHandle(key) {
   const keyValue = key.target.value;
   if (numString.includes(".") && keyValue == ".") return; //ignore multiple decimal clicks
 
+  //decimal and digit keys
   if (key.target.type == "button") {
     numString += keyValue;
     updateDisplay(`${numString}`);
     return;
   }
+
+  //operator keys
   if (key.target.type == "submit") {
     const operator = key.target.id;
     if (total == "0" && numString == "") {
@@ -74,6 +88,31 @@ function keyHandle(key) {
   }
   return;
 }
+
+function addNewNum() {
+  const newNum = Number.parseFloat(numString);
+  numString = ""; //reset
+  numArray.push(newNum);
+  return;
+}
+
+function calcResult() {
+  const nextNum = numArray.shift();
+  if (total === "0") return (total = nextNum); //treat first number as total
+  prevOperator = operatorArray.shift(); //previously saved operator in queue
+  if (nextNum === 0 || nextNum) {
+    //if nextNum is either 0 or not empty
+    return operate[prevOperator](nextNum);
+  }
+  return; //else change operator & exit
+}
+
+//special keys mapping with DOM
+//clear(reset) key
+const clear = document.querySelector(".specialKeys>#clear");
+clear.addEventListener("click", () => {
+  document.location.reload();
+});
 
 //delete key
 const deleteKey = document.querySelector("#delete");
@@ -118,36 +157,3 @@ function updateDisplay(mainText, subText) {
     mainDisplay.innerText = mainText;
   }
 }
-
-function addNewNum() {
-  const newNum = Number.parseFloat(numString);
-  numString = ""; //reset
-  numArray.push(newNum);
-  return;
-}
-
-function calcResult() {
-  const nextNum = numArray.shift();
-  if (total === "0") return (total = nextNum); //treat first number as total
-  prevOperator = operatorArray.shift(); //previously saved operator in queue
-  if (nextNum === 0 || nextNum) {
-    //if nextNum is either 0 or not empty
-    return operate[prevOperator](nextNum);
-  }
-  return; //else change operator & exit
-}
-
-// return decimal information
-function decimalIntensity(num) {
-  if (!isDecimal(num)) return 0; //every integer have 0 digits of meaningful value after decimal
-  const decimalIndex = `${num}`.indexOf(".");
-  const decimalLength = `${num}`.length - 1; //length counts from 1
-  const fractionIntensity = decimalLength - decimalIndex; //count of digits after "."
-  return fractionIntensity;
-}
-
-//clear/reset key
-const clear = document.querySelector(".specialKeys>#clear");
-clear.addEventListener("click", () => {
-  document.location.reload();
-});
