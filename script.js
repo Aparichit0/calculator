@@ -63,6 +63,7 @@ numPad.forEach((e) => e.addEventListener("click", keyHandle));
 //numPad keys handling logic
 function keyHandle(key) {
   const keyValue = key.target.value;
+  playTypingSound(key);
   if (numString.includes(".") && keyValue == ".") return; //ignore multiple decimal clicks
 
   //decimal and digit keys
@@ -125,6 +126,7 @@ const deleteKey = document.querySelector("#delete");
 deleteKey.addEventListener(
   "click",
   (deleteLast = () => {
+    playTypingSound(1);
     if (mainDisplay.innerText) {
       //runs when main display has content
       if (numString == "") numString = `${total}`;
@@ -169,8 +171,16 @@ function keyPress(e) {
   k = { target: key }; // to avoid refactoring (click events requires "target", but keydown doesn't)
   if (e.code == "Enter") {
     //use "Enter" key instead for "="
-   const enterKey = document.querySelector("#equals");
+    const enterKey = document.querySelector("#equals");
     k = { target: enterKey };
   }
   keyHandle(k); //handle all numPad keys
+}
+
+//button typing sound
+const audio = document.querySelector("#btnSound");
+function playTypingSound(key) {
+  if (!key) return; // don't playing for out of scope keys
+  audio.currentTime = 0; //reset playback on every click
+  audio.play();
 }
