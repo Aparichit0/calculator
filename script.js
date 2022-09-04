@@ -123,9 +123,9 @@ clear.addEventListener(
   })
 );
 
-//delete key
-const deleteKey = document.querySelector("#delete");
-deleteKey.addEventListener(
+//backspace key
+const backspace = document.querySelector("#backspace");
+backspace.addEventListener(
   "click",
   (deleteLast = () => {
     playTypingSound(1);

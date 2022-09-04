@@ -106,7 +106,7 @@ nav,
     flex-basis: 100%;
 }
 
-#delete {
+#backspace {
     background-image: url(./img/delete-svgrepo-com.svg);
     background-repeat: no-repeat;
     background-position: center;
