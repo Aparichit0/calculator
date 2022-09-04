@@ -1,14 +1,15 @@
 # calculator
-An online calculator web app
-(core functionality is ready for touch devices)
+A simple javascript calculator web app
 
-next task: mapping key with keyboard;
+(part of "the odin project" exercise project series)
+
+Any feedback is appreciated...
+please do let me know, if you think there is an issue...
+specially, if it's with the core funtionality (AKA "basic math calculations")
 
 known bugs:
 1. if no operator is choosen after "=", then it ignores current total & start from scratch
-	(minor)
+	(although it's a normal behaviour in many old calculators)
 
 goals:
-1. add new key (+/-)
-2. map keys with keyboard
-3. click sounds
+1. add new key (+/-) to enable support for negative value input
