@@ -7,6 +7,11 @@ Any feedback is appreciated...
 please do let me know, if you think there is an issue...
 specially, if it's with the core funtionality (AKA "basic math calculations")
 
+Features:
+1. Physical keyboard input is supported
+2. Decimal calculation are supported
+
+
 known bugs:
 1. if no operator is choosen after "=", then it ignores current total & start from scratch
 	(although it's a normal behaviour in many old calculators)
