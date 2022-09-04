@@ -167,5 +167,10 @@ function keyPress(e) {
   if (e.key == "Delete") return reset(); //clear all key
   if (e.key == "Backspace") return deleteLast(); //delete key
   k = { target: key }; // to avoid refactoring (click events requires "target", but keydown doesn't)
+  if (e.code == "Enter") {
+    //use "Enter" key instead for "="
+   const enterKey = document.querySelector("#equals");
+    k = { target: enterKey };
+  }
   keyHandle(k); //handle all numPad keys
 }
