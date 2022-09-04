@@ -117,7 +117,9 @@ const clear = document.querySelector(".specialKeys>#clear");
 clear.addEventListener(
   "click",
   (reset = () => {
-    document.location.reload();
+    playTypingSound(1);
+    //wait for playing sound before reloading
+    setTimeout(() => document.location.reload(), 225);
   })
 );
 
