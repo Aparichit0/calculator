@@ -94,6 +94,7 @@ function keyHandle(key) {
 }
 
 function addNewNum() {
+  if (numString == "." || numString == "-") numString = "0";
   const newNum = Number.parseFloat(numString);
   numString = ""; //reset
   numArray.push(newNum);
