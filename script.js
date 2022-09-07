@@ -128,11 +128,10 @@ const negation = document.querySelector("#negation");
 negation.addEventListener(
   "click",
   (negate = () => {
-    if (numString) {
+    if (!numString || numString == 0) return; //exit if no value or value is 0
       numString = `${numString * -1}`;
       if (numString > 0) return updateDisplay(`${numString}`); // prevent unnecessary "()" for positive numbers
       updateDisplay(`(${numString})`);
-    }
   })
 );
 
