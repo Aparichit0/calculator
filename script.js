@@ -132,9 +132,9 @@ negation.addEventListener(
       numString = `${total}`; // handle values after submission
     }
     if (!numString || numString == 0) return; //exit if no value or value is 0
-      numString = `${numString * -1}`;
-      if (numString > 0) return updateDisplay(`${numString}`); // prevent unnecessary "()" for positive numbers
-      updateDisplay(`(${numString})`);
+    if (numString == "-") numString = null; //minus sign without a value is considered empty
+    numString = `${numString * -1}`; //negation of value
+    updateDisplay(`${numString}`);
   })
 );
 
@@ -169,6 +169,13 @@ function updateDisplay(mainText, subText) {
     subDisplay.innerText = "Syntax";
     mainDisplay.innerText = "Error";
     return;
+  }
+  if (
+    subDisplay.innerText &&
+    subText != "" &&
+    (`${mainText}` < 0 || `${mainText}`.startsWith("-"))
+  ) {
+    mainText = `(${mainText})`; //show "()" for negative values
   }
   if (mainText != null) {
     mainDisplay.innerText = mainText;
