@@ -130,6 +130,7 @@ negation.addEventListener(
   (negate = () => {
     if (numString) {
       numString = `${numString * -1}`;
+      if (numString > 0) return updateDisplay(`${numString}`); // prevent unnecessary "()" for positive numbers
       updateDisplay(`(${numString})`);
     }
   })
