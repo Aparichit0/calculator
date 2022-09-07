@@ -193,6 +193,7 @@ function keyPress(e) {
   const key = document.querySelector(`.keys button[data-key="${e.key}"]`);
   if (e.key == "Delete") return reset(); //clear all key
   if (e.key == "Backspace") return deleteLast(); //delete key
+  if (e.key == "Shift") return negate(); //negation key
   k = { target: key }; // to avoid refactoring (click events requires "target", but keydown doesn't)
   if (e.code == "Enter") {
     //use "Enter" key instead for "="
