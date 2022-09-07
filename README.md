@@ -1,20 +1,21 @@
 # calculator
-A simple javascript calculator web app
+A simple javascript calculator web app 📲
 
-(part of "the odin project" exercise project series)
+(part of "the odin project" exercises)
 
-Any feedback is appreciated...
-please do let me know, if you think there is an issue...
-specially, if it's with the core funtionality (AKA "basic math calculations")
+Any feedback is appreciated...🙏
+please do let me know, if you think there is an issue!
 
-Features:
-1. Physical keyboard input is supported
-2. Decimal calculation are supported
+⌨️ Keybindings (for special keys):
+	1. All clear/reset  => "Delete" key,
+	2. Negation (+/-) => "Shift" Key,
+	3. Backspace (delete last character) => "Backspace" key
 
+✨ Features:
+	1. Physical keyboard input is supported
+	2. Decimal calculation are supported
+	3. Negation of values (+/-) is supported
 
-known bugs:
-1. if no operator is choosen after "=", then it ignores current total & start from scratch
-	(although it's a normal behaviour in many old calculators)
-
-goals:
-1. add new key (+/-) to enable support for negative value input
+🐞 known bugs:
+	1. if no operator is chosen after "=", then it ignores current total & start from scratch
+	(although it's a normal behavior in many old calculators)
