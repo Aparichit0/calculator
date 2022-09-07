@@ -151,7 +151,7 @@ backspace.addEventListener(
       updateDisplay(`${numString}`);
       return;
     }
-    if (subDisplay.innerText && !mainDisplay.innerText) {
+    if (subDisplay.innerText && mainDisplay.innerText == "") {
       //runs when only subDisplay has content
       operatorArray.pop(); //remove operator
       operatorArray.push("equals"); //add dummy operator that does nothing
