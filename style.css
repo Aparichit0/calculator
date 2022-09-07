@@ -107,10 +107,10 @@ nav,
 }
 
 #backspace {
-    background-image: url(./img/delete-svgrepo-com.svg);
+    background-image: url(./img/delete-svgrepo-com.svg), linear-gradient(30deg, var(--btnBgColor1) 15%, var(--btnBgColor2) 90%);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1.625em;
+    background-size: 1.625em, cover;
 }
 
 .numKeys {
