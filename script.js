@@ -129,6 +129,7 @@ const negation = document.querySelector("#negation");
 negation.addEventListener(
   "click",
   (negate = () => {
+    playTypingSound(1);
     if (!numString && !subDisplay.innerText && total != 0) {
       numString = `${total}`; // handle values after submission
     }
