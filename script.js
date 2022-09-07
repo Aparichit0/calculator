@@ -123,6 +123,18 @@ clear.addEventListener(
   })
 );
 
+//negation (change positive/negative) key
+const negation = document.querySelector("#negation");
+negation.addEventListener(
+  "click",
+  (negate = () => {
+    if (numString) {
+      numString = `${numString * -1}`;
+      updateDisplay(`(${numString})`);
+    }
+  })
+);
+
 //backspace key
 const backspace = document.querySelector("#backspace");
 backspace.addEventListener(
