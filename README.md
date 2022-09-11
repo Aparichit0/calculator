@@ -19,3 +19,6 @@ please do let me know, if you think there is an issue!
 🐞 known bugs:
 1. if no operator is chosen after "=", then it ignores current total & start from scratch
 (although it's a normal behavior in many old calculators)
+2. for firefox users on desktop:<br/>
+whenever user press "/" key (assigned for "÷"), firefox open "quick search" and interrupt normal usage.
+<br/>read more: https://bugzilla.mozilla.org/show_bug.cgi?id=942269
