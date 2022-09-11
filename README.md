@@ -1,24 +1,24 @@
 # calculator
-A simple javascript calculator web app 📲
+A simple javascript calculator web app 📲<br/>
+&nbsp;(part of "the odin project" exercises)<br/>
 
-(part of "the odin project" exercises)
+Feedback is appreciated...🙏<br/>
+Please do <em>let me know</em>, if you think there is an issue!<br/>
+<hr/>
 
-Any feedback is appreciated...🙏
-please do let me know, if you think there is an issue!
+⌨️ <strong>Keybindings</strong> (for special keys):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1. All clear/reset  => "Delete" key,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2. Negation (+/-) => "Shift" Key,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3. Backspace (delete last character) => "Backspace" key
 
-⌨️ Keybindings (for special keys):
-1. All clear/reset  => "Delete" key,
-2. Negation (+/-) => "Shift" Key,
-3. Backspace (delete last character) => "Backspace" key
+✨ <strong>Features</strong>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1. Physical keyboard input is supported<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2. Decimal calculation are supported<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;3. Negation of values (+/-) is supported
 
-✨ Features:
-1. Physical keyboard input is supported
-2. Decimal calculation are supported
-3. Negation of values (+/-) is supported
-
-🐞 known bugs:
-1. if no operator is chosen after "=", then it ignores current total & start from scratch
-(although it's a normal behavior in many old calculators)
-2. for firefox users on desktop:<br/>
-whenever user press "/" key (assigned for "÷"), firefox open "quick search" and interrupt normal usage.
-<br/>read more: https://bugzilla.mozilla.org/show_bug.cgi?id=942269
+🐞 <strong>known bugs</strong>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1. if no operator is chosen after "=", then it ignores current total & start from scratch
+(although it's a normal behavior in many old calculators)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2. for firefox users on desktop:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whenever user press "/" key (assigned for "÷"), firefox open "quick search" and interrupt normal usage.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read more: https://bugzilla.mozilla.org/show_bug.cgi?id=942269
