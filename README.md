@@ -17,8 +17,8 @@ Please do <em>let me know</em>, if you think there is an issue!<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;3. Negation of values (+/-) is supported
 
 🐞 <strong>known bugs</strong>:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;1. if no operator is chosen after "=", then it ignores current total & start from scratch
-(although it's a normal behavior in many old calculators)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;2. for firefox users on desktop:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;1. If no operator is chosen after "=", then it will ignore and reset current total<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normal behavior in older calculators)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;2. For firefox users on desktop:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whenever user press "/" key (assigned for "÷"), firefox open "quick search" and interrupt normal usage.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read more: https://bugzilla.mozilla.org/show_bug.cgi?id=942269
